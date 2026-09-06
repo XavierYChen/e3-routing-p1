@@ -6,7 +6,7 @@
 - [x] 正式训练 batch on/off 计时口径。
 - [x] AB/BA 顺序、warm-up、重复和 bootstrap 95% 区间。
 - [x] 真实 COCO8 三族基准中位减速均 <10%。
-- [x] 保存完整结果、面板截图与本地 Git commit。
+- [x] 保存完整结果、面板截图并提交至 GitHub。
 
 ## 验收数字
 
@@ -19,3 +19,4 @@
 | Latent | 0.9981, 1.0057, 1.0673 | +0.57% | 45 |
 
 18 个 worker 均通过初始模型 SHA-256、输入 batch 指纹和逐 batch loss 一致性检查。开启采集的时间包括 forward hook、schema 校验、JSONL 追加以及原子 `latest.json` 更新。
+
