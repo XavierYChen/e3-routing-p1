@@ -19,4 +19,3 @@
 | Latent | 0.9981, 1.0057, 1.0673 | +0.57% | 45 |
 
 18 个 worker 均通过初始模型 SHA-256、输入 batch 指纹和逐 batch loss 一致性检查。开启采集的时间包括 forward hook、schema 校验、JSONL 追加以及原子 `latest.json` 更新。
-
