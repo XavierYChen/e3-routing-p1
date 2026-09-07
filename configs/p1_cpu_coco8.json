@@ -2,12 +2,12 @@
   "data": "coco8.yaml",
   "families": ["moe", "mot", "latent"],
   "epochs": 5,
-  "repetitions": 3,
+  "repetitions": 7,
   "imgsz": 64,
   "batch": 2,
   "device": "cpu",
   "warmup_batches": 1,
   "sample_every": 2,
   "seed": 0,
-  "pair_order": ["off/on", "on/off", "off/on"]
+  "pair_order": ["off/on", "on/off", "off/on", "on/off", "off/on", "on/off", "off/on"]
 }

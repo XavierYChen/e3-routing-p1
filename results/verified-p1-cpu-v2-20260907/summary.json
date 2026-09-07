@@ -1,0 +1,82 @@
+{
+  "status": "passed",
+  "scope": "paired real COCO8 training batch time including routing collection and live dashboard writes",
+  "families": {
+    "moe": {
+      "paired_mean_ratios": [
+        0.9173950239906155,
+        1.2737549211860755,
+        0.9492188624629777,
+        1.076004127411644,
+        1.0037569289290582,
+        1.0296996340787004,
+        1.1108001437176003
+      ],
+      "median_ratio": 1.0296996340787004,
+      "median_slowdown_pct": 2.9699634078700354,
+      "bootstrap_95_ci_ratio": [
+        0.9492188624629777,
+        1.1108001437176003
+      ],
+      "records_written": 210,
+      "passed_median_under_10_percent": true
+    },
+    "mot": {
+      "paired_mean_ratios": [
+        1.1544332985168408,
+        1.0067867140706872,
+        0.9908568033166282,
+        1.0536771948234,
+        1.0156819739299634,
+        1.0211454785062815,
+        1.0050778869893928
+      ],
+      "median_ratio": 1.0156819739299634,
+      "median_slowdown_pct": 1.56819739299634,
+      "bootstrap_95_ci_ratio": [
+        1.0050778869893928,
+        1.0536771948234
+      ],
+      "records_written": 140,
+      "passed_median_under_10_percent": true
+    },
+    "latent": {
+      "paired_mean_ratios": [
+        0.9942787425616167,
+        0.9985515886898948,
+        1.0696578276350197,
+        1.199930474769334,
+        1.0421409715484633,
+        1.0789301830776006,
+        1.0151210340761927
+      ],
+      "median_ratio": 1.0421409715484633,
+      "median_slowdown_pct": 4.21409715484633,
+      "bootstrap_95_ci_ratio": [
+        0.9985515886898948,
+        1.0789301830776006
+      ],
+      "records_written": 105,
+      "passed_median_under_10_percent": true
+    }
+  },
+  "config": {
+    "yolo_root": "D:\\AI\\YOLO-Master",
+    "p0_root": "D:\\AI\\E3-Routing-P0",
+    "output": "D:\\AI\\E3-Routing-P1\\results\\verified-p1-cpu-v2-20260907",
+    "data": "coco8.yaml",
+    "epochs": 5,
+    "repetitions": 7,
+    "imgsz": 64,
+    "batch": 2,
+    "device": "cpu",
+    "warmup_batches": 1,
+    "sample_every": 2,
+    "seed": 0,
+    "keep_train_artifacts": false
+  },
+  "limitations": [
+    "CPU laptop microbenchmark; report confidence interval and raw batches.",
+    "Randomly initialized models test infrastructure overhead, not detection quality."
+  ]
+}

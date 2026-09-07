@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width">
+<title>E3 P1 Live Routing</title>
+<style>
+body{font-family:system-ui;margin:0;background:#f8fafc;color:#172033}header{padding:20px 28px;background:#0f172a;color:white}
+main{padding:22px 28px}.meta{color:#64748b;margin-bottom:16px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:16px}
+.card{background:white;border:1px solid #e2e8f0;border-radius:12px;padding:16px;box-shadow:0 2px 8px #0f172a0d}
+.family{font-weight:700;color:#2563eb}.row{display:grid;grid-template-columns:52px 1fr 52px;gap:8px;align-items:center;margin:5px 0}
+.track{height:12px;background:#e2e8f0;border-radius:6px;overflow:hidden}.bar{height:100%;background:#2563eb}
+.metrics{display:flex;gap:18px;margin-top:12px;font-size:13px;color:#475569}.warn{color:#b45309}
+</style></head><body><header><h1>E3 P1 · Live Routing Dashboard</h1></header>
+<main><div id="meta" class="meta">Waiting for telemetry…</div><div id="grid" class="grid"></div></main>
+<script>
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",""":"&quot;","'":"&#39;"}[c]));
+async function refresh(){try{const r=await fetch("latest.json?"+Date.now());if(!r.ok)return;const p=await r.json();
+document.getElementById("meta").textContent=`run=${p.run_id} · step=${p.step} · updated=${p.updated_utc} · records=${p.records.length}`;
+document.getElementById("grid").innerHTML=p.records.map(x=>`<section class="card"><div class="family">${esc(x.family.toUpperCase())}</div>
+<h3>${esc(x.layer_name)}</h3><div>${x.expert_usage.map((v,i)=>`<div class="row"><span>E${i}</span><div class="track"><div class="bar" style="width:${Math.max(1,v*100)}%"></div></div><span>${v.toFixed(3)}</span></div>`).join("")}</div>
+<div class="metrics"><span>Entropy ${x.normalized_entropy.toFixed(3)}</span><span>Gini ${x.normalized_gini.toFixed(3)}</span><span class="${x.aux_loss.observed===null?"warn":""}">Aux ${x.aux_loss.observed===null?esc(x.aux_loss.status):x.aux_loss.observed.toFixed(4)}</span></div></section>`).join("");
+}catch(e){document.getElementById("meta").textContent="Waiting for latest.json…";}}refresh();setInterval(refresh,1000);
+</script></body></html>

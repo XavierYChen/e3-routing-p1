@@ -1,0 +1,199 @@
+{
+  "schema_version": "e3.routing_record.v1",
+  "run_id": "mot-rep4-on",
+  "step": 8,
+  "updated_utc": "2026-09-07T07:19:51.127400+00:00",
+  "records": [
+    {
+      "schema_version": "e3.routing_record.v1",
+      "run_id": "mot-rep4-on",
+      "timestamp_utc": "2026-09-07T07:19:51.019221+00:00",
+      "step": 8,
+      "mode": "train",
+      "family": "mot",
+      "layer_name": "model.13.m.0",
+      "module_type": "MoTBlock",
+      "num_experts": 3,
+      "top_k": 2,
+      "expert_usage": [
+        0.4660411477088928,
+        0.48135489225387573,
+        0.05260399729013443
+      ],
+      "usage_semantics": "mean_mixture_probability",
+      "mean_router_probs": [
+        0.4660411477088928,
+        0.48135489225387573,
+        0.05260399729013443
+      ],
+      "mean_topk_weight": null,
+      "normalized_entropy": 0.785239176765568,
+      "normalized_gini": 0.4287509694695474,
+      "dominant_share": 0.48135489225387573,
+      "dead_experts": [],
+      "aux_loss": {
+        "status": "observed",
+        "observed": 0.02568214014172554,
+        "balance_loss_coeff": 0.01,
+        "router_z_loss_coeff": 0.01
+      },
+      "source": "last_routing_snapshot",
+      "tensor_shape": [
+        2,
+        64,
+        4,
+        4
+      ],
+      "metadata": {
+        "usage_scope": "rank_local",
+        "global_usage_available": false,
+        "dispatch_policy": null
+      }
+    },
+    {
+      "schema_version": "e3.routing_record.v1",
+      "run_id": "mot-rep4-on",
+      "timestamp_utc": "2026-09-07T07:19:51.026758+00:00",
+      "step": 8,
+      "mode": "train",
+      "family": "mot",
+      "layer_name": "model.16.m.0",
+      "module_type": "MoTBlock",
+      "num_experts": 3,
+      "top_k": 2,
+      "expert_usage": [
+        0.4966707229614258,
+        0.00666646845638752,
+        0.49666279554367065
+      ],
+      "usage_semantics": "mean_mixture_probability",
+      "mean_router_probs": [
+        0.4966707229614258,
+        0.00666646845638752,
+        0.49666279554367065
+      ],
+      "mean_topk_weight": null,
+      "normalized_entropy": 0.6631766151681409,
+      "normalized_gini": 0.4900042284280064,
+      "dominant_share": 0.4966707229614258,
+      "dead_experts": [
+        1
+      ],
+      "aux_loss": {
+        "status": "observed",
+        "observed": 0.026960380375385284,
+        "balance_loss_coeff": 0.01,
+        "router_z_loss_coeff": 0.01
+      },
+      "source": "last_routing_snapshot",
+      "tensor_shape": [
+        2,
+        32,
+        8,
+        8
+      ],
+      "metadata": {
+        "usage_scope": "rank_local",
+        "global_usage_available": false,
+        "dispatch_policy": null
+      }
+    },
+    {
+      "schema_version": "e3.routing_record.v1",
+      "run_id": "mot-rep4-on",
+      "timestamp_utc": "2026-09-07T07:19:51.035766+00:00",
+      "step": 8,
+      "mode": "train",
+      "family": "mot",
+      "layer_name": "model.19.m.0",
+      "module_type": "MoTBlock",
+      "num_experts": 3,
+      "top_k": 2,
+      "expert_usage": [
+        0.006666545290499926,
+        0.4966694414615631,
+        0.49666401743888855
+      ],
+      "usage_semantics": "mean_mixture_probability",
+      "mean_router_probs": [
+        0.006666545290499926,
+        0.4966694414615631,
+        0.49666401743888855
+      ],
+      "mean_topk_weight": null,
+      "normalized_entropy": 0.6631769119638713,
+      "normalized_gini": 0.49000290455296647,
+      "dominant_share": 0.4966694414615631,
+      "dead_experts": [
+        0
+      ],
+      "aux_loss": {
+        "status": "observed",
+        "observed": 0.0269593708217144,
+        "balance_loss_coeff": 0.01,
+        "router_z_loss_coeff": 0.01
+      },
+      "source": "last_routing_snapshot",
+      "tensor_shape": [
+        2,
+        64,
+        4,
+        4
+      ],
+      "metadata": {
+        "usage_scope": "rank_local",
+        "global_usage_available": false,
+        "dispatch_policy": null
+      }
+    },
+    {
+      "schema_version": "e3.routing_record.v1",
+      "run_id": "mot-rep4-on",
+      "timestamp_utc": "2026-09-07T07:19:51.045778+00:00",
+      "step": 8,
+      "mode": "train",
+      "family": "mot",
+      "layer_name": "model.22.m.0",
+      "module_type": "MoTBlock",
+      "num_experts": 3,
+      "top_k": 1,
+      "expert_usage": [
+        0.9866666793823242,
+        0.006666630040854216,
+        0.0066666798666119576
+      ],
+      "usage_semantics": "mean_mixture_probability",
+      "mean_router_probs": [
+        0.9866666793823242,
+        0.006666630040854216,
+        0.0066666798666119576
+      ],
+      "mean_topk_weight": null,
+      "normalized_entropy": 0.07286684451255726,
+      "normalized_gini": 0.9800000279210508,
+      "dominant_share": 0.9866666793823242,
+      "dead_experts": [
+        1,
+        2
+      ],
+      "aux_loss": {
+        "status": "observed",
+        "observed": 0.041657328605651855,
+        "balance_loss_coeff": 0.01,
+        "router_z_loss_coeff": 0.01
+      },
+      "source": "last_routing_snapshot",
+      "tensor_shape": [
+        2,
+        128,
+        2,
+        2
+      ],
+      "metadata": {
+        "usage_scope": "rank_local",
+        "global_usage_available": false,
+        "dispatch_policy": null
+      }
+    }
+  ]
+}

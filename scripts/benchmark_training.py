@@ -36,13 +36,14 @@ def render_overhead(families: dict, output: Path) -> None:
     import matplotlib.pyplot as plt
 
     names = list(families)
+    labels = [name.upper() for name in names]
     slowdowns = [families[name]["median_slowdown_pct"] for name in names]
     lower = [(families[name]["median_ratio"] - families[name]["bootstrap_95_ci_ratio"][0]) * 100 for name in names]
     upper = [(families[name]["bootstrap_95_ci_ratio"][1] - families[name]["median_ratio"]) * 100 for name in names]
     colors = ["#16a34a" if value < 10 else "#dc2626" for value in slowdowns]
     figure, axis = plt.subplots(figsize=(8, 4.8), constrained_layout=True)
-    bars = axis.bar(names, slowdowns, color=colors, width=0.62)
-    axis.errorbar(names, slowdowns, yerr=[lower, upper], fmt="none", color="#111827", capsize=5)
+    bars = axis.bar(labels, slowdowns, color=colors, width=0.62)
+    axis.errorbar(labels, slowdowns, yerr=[lower, upper], fmt="none", color="#111827", capsize=5)
     axis.axhline(10, color="#d97706", linestyle="--", linewidth=1.5, label="P1 threshold: 10%")
     axis.axhline(0, color="#64748b", linewidth=0.8)
     axis.set(title="E3 P1 paired COCO8 training overhead", ylabel="Median slowdown (%)")
@@ -87,7 +88,7 @@ def parser() -> argparse.ArgumentParser:
     )
     result.add_argument("--data", default="coco8.yaml")
     result.add_argument("--epochs", type=int, default=5)
-    result.add_argument("--repetitions", type=int, default=3)
+    result.add_argument("--repetitions", type=int, default=7)
     result.add_argument("--imgsz", type=int, default=64)
     result.add_argument("--batch", type=int, default=2)
     result.add_argument("--device", default="cpu")
