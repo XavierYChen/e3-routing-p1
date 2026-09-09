@@ -9,7 +9,27 @@ P1 在 [P0 统一采集库](https://github.com/XavierYChen/e3-routing-p0) 上增
 
 实时面板使用浏览器原生 HTML/JavaScript，每秒读取原子更新的 `latest.json`。训练线程同时追加 `routing_records.jsonl`，断电前的历史仍然保留。没有修改腾讯核心 forward。
 
-## 已验证结果
+## 2026-09-09 预训练 GPU 正式重跑
+
+为让 P1 的训练状态能继续服务 P2，本次从腾讯仓库提供的 `yolo26n.pt` 迁移兼容权重，在 RTX 3060 Laptop GPU 上使用 COCO8、640px、10 epochs、seed 0/1/2 重新执行三族配对基准。开销实验固定 FP32、batch=1，并每 8 个 batch 采集一次；每个 40-batch 训练仍得到 5 个时间点。三族中位开销全部低于 10%。
+
+| 路由族 | 三组 on/off 比值 | 中位减速 | bootstrap 95% 区间 | 写入记录 | 结论 |
+|---|---|---:|---:|---:|---|
+| **MOE** | `1.0331 / 0.9816 / 0.9905` | **-0.95%** | -1.84% ～ +3.31% | 90 | 通过 |
+| **MOT** | `1.0962 / 1.0215 / 0.9994` | **+2.15%** | -0.06% ～ +9.62% | 60 | 通过 |
+| **LATENT** | `1.0302 / 1.0166 / 0.9847` | **+1.66%** | -1.53% ～ +3.02% | 45 | 通过 |
+
+![预训练 GPU 配对开销](results/verified-p1-gpu-pretrained-10e-20260909/training_overhead.png)
+
+负开销表示进程调度噪声范围内没有可辨别减速，不解释为采集提升训练速度。MOT 在当前 CUDA 栈上存在跨进程非确定性：off/off 基线的平均相对 loss 漂移为 2.33%、最大 12.23%；正式 on/off 因此公开轨迹漂移，但仍强制初始权重和所有训练批次指纹一致。MOE 与 LATENT 的 on/off loss 则逐批一致。完整证据见 [`results/verified-p1-gpu-pretrained-10e-20260909`](results/verified-p1-gpu-pretrained-10e-20260909)。
+
+另行保存的训练后权重不进入开销计时。MOT best 为 epoch 10，mAP50 `0.1020`、mAP50-95 `0.0343`；MOA best 为 epoch 6，mAP50 `0.1025`、mAP50-95 `0.0375`。它们比旧版随机起点/零验证结果更适合做 P2 路由诊断，但 COCO8 只有 4 张训练图且与 COCO 预训练域重合，不能作为泛化性能结论。公开仓库提交曲线、预测图、配置与 checkpoint 哈希，权重保留本地。
+
+![MOT 训练曲线](results/trained-routing-20260909/mot-results.png)
+
+![MOA 训练曲线](results/trained-routing-20260909/moa-results.png)
+
+## 2026-09-07 CPU 基线（保留）
 
 2026-09-07 在 Windows 11、Intel i7-12700H CPU 上完成真实 COCO8 配对训练。每族运行 7 组，每组分别关闭和开启采集；每次 5 epochs。三族的中位减速均低于 P1 的 10% 门槛。
 
@@ -37,6 +57,13 @@ set "E3_YOLO_MASTER_ROOT=D:\AI\YOLO-Master"
 set "E3_P0_ROOT=D:\AI\E3-Routing-P0"
 set "E3_PYTHON=D:\AI\envs\yolo_master\python.exe"
 run_benchmark.cmd
+```
+
+运行新版预训练 GPU 基准与 P2 权重训练：
+
+```bat
+run_benchmark_gpu_pretrained.cmd
+run_specialization.cmd
 ```
 
 打开某次 on 运行的面板：

@@ -1,0 +1,277 @@
+{
+  "algorithm": "sha256",
+  "files": {
+    "dashboard/latent/rep-0/dashboard.html": {
+      "sha256": "b596c36dc2fd9141a3bebc2bfc1c40b598e3d8ccea0aa814d68898f121e526aa",
+      "bytes": 2283
+    },
+    "dashboard/latent/rep-0/latest.json": {
+      "sha256": "3d0947c13ae72da24475f4d84fd2fdc4421e9ff3f2f7d6569060bc077e792884",
+      "bytes": 3779
+    },
+    "dashboard/latent/rep-0/routing_records.jsonl": {
+      "sha256": "f79d3a668f5a1895f9609dc44d010cd673ccb89e1a4d9ace1efe89bc071dcba3",
+      "bytes": 12304
+    },
+    "dashboard/latent/rep-1/dashboard.html": {
+      "sha256": "b596c36dc2fd9141a3bebc2bfc1c40b598e3d8ccea0aa814d68898f121e526aa",
+      "bytes": 2283
+    },
+    "dashboard/latent/rep-1/latest.json": {
+      "sha256": "87a7d2653c0220fffda836677da9084994726138611b65995cc497c5ee5d4879",
+      "bytes": 3778
+    },
+    "dashboard/latent/rep-1/routing_records.jsonl": {
+      "sha256": "6b1f06015d3046f616e3ea68b0f97cce10b302253b99fea65e8d844f000dab8a",
+      "bytes": 12298
+    },
+    "dashboard/latent/rep-2/dashboard.html": {
+      "sha256": "b596c36dc2fd9141a3bebc2bfc1c40b598e3d8ccea0aa814d68898f121e526aa",
+      "bytes": 2283
+    },
+    "dashboard/latent/rep-2/latest.json": {
+      "sha256": "7cf885964ceb83a518e594f65d6b9558597d126c600f419f1e77be9ab2ca7cff",
+      "bytes": 3778
+    },
+    "dashboard/latent/rep-2/routing_records.jsonl": {
+      "sha256": "4eb4168086dca8e02bfc1d8284688f189ed20f17b2771ed8533b075616099016",
+      "bytes": 12300
+    },
+    "dashboard/moe/rep-0/dashboard.html": {
+      "sha256": "b596c36dc2fd9141a3bebc2bfc1c40b598e3d8ccea0aa814d68898f121e526aa",
+      "bytes": 2283
+    },
+    "dashboard/moe/rep-0/latest.json": {
+      "sha256": "7be8b5184333808611d438099bec1916b85fcd7c98fe959d2e4099d5d09de7a2",
+      "bytes": 11666
+    },
+    "dashboard/moe/rep-0/routing_records.jsonl": {
+      "sha256": "87b59ef0cdad927e0b4e6b87e3fc2a3a352c47ce5eadd813e39b2806b71a0859",
+      "bytes": 39385
+    },
+    "dashboard/moe/rep-1/dashboard.html": {
+      "sha256": "b596c36dc2fd9141a3bebc2bfc1c40b598e3d8ccea0aa814d68898f121e526aa",
+      "bytes": 2283
+    },
+    "dashboard/moe/rep-1/latest.json": {
+      "sha256": "4473025b74110fc608fd3e003dec71eb144456815de5933c70ac2a9c87494a24",
+      "bytes": 11658
+    },
+    "dashboard/moe/rep-1/routing_records.jsonl": {
+      "sha256": "d88c7809115b26354ba6bfbc9ab14c9d2dc3b0cdad4a467f4598b2eb2d36c8a0",
+      "bytes": 39399
+    },
+    "dashboard/moe/rep-2/dashboard.html": {
+      "sha256": "b596c36dc2fd9141a3bebc2bfc1c40b598e3d8ccea0aa814d68898f121e526aa",
+      "bytes": 2283
+    },
+    "dashboard/moe/rep-2/latest.json": {
+      "sha256": "fb67108f670c6827ebfec66ea499b44c6eace6be633a29937db9aa71b2744a08",
+      "bytes": 11675
+    },
+    "dashboard/moe/rep-2/routing_records.jsonl": {
+      "sha256": "cb502dacdc35ea99096236f302d9c5ce26c7da5fc26dccce35504b8249b39c8c",
+      "bytes": 39426
+    },
+    "dashboard/mot/rep-0/dashboard.html": {
+      "sha256": "b596c36dc2fd9141a3bebc2bfc1c40b598e3d8ccea0aa814d68898f121e526aa",
+      "bytes": 2283
+    },
+    "dashboard/mot/rep-0/latest.json": {
+      "sha256": "f636c91df9d73931331cad886c99bdd285e7f29d33f76ca609fc45c3b22e6238",
+      "bytes": 5396
+    },
+    "dashboard/mot/rep-0/routing_records.jsonl": {
+      "sha256": "3f4e54d661dc8e8dc5c210f9915e4b4e77cabf15cf87bfbd339528f501d133ce",
+      "bytes": 18619
+    },
+    "dashboard/mot/rep-1/dashboard.html": {
+      "sha256": "b596c36dc2fd9141a3bebc2bfc1c40b598e3d8ccea0aa814d68898f121e526aa",
+      "bytes": 2283
+    },
+    "dashboard/mot/rep-1/latest.json": {
+      "sha256": "30f04131f7452fee7ee986851128b740db6c61a0247dd090c95e7e50777cc2a4",
+      "bytes": 5422
+    },
+    "dashboard/mot/rep-1/routing_records.jsonl": {
+      "sha256": "608b1c05204419daa6856486821812ef53e94f17040bca830b1caa61e1e08713",
+      "bytes": 18648
+    },
+    "dashboard/mot/rep-2/dashboard.html": {
+      "sha256": "b596c36dc2fd9141a3bebc2bfc1c40b598e3d8ccea0aa814d68898f121e526aa",
+      "bytes": 2283
+    },
+    "dashboard/mot/rep-2/latest.json": {
+      "sha256": "5945af4d743cce7845ebe56f686ab0eea33547f87585bcd2dc3f37e068911ee5",
+      "bytes": 5405
+    },
+    "dashboard/mot/rep-2/routing_records.jsonl": {
+      "sha256": "00f9d4d1f54135880c617c39aed26bc6753c37c6269bf855c3728a5ae60d0cfb",
+      "bytes": 18607
+    },
+    "dashboard_snapshot.png": {
+      "sha256": "d88653dcb85f71b95b492b6fe51e59a9f61a6df96eb8bf4a27863f7b10c7664c",
+      "bytes": 273368
+    },
+    "logs/latent-rep0-off.log": {
+      "sha256": "d7e68ed018c2d845d6aceb6e43e1432ccdf0d1697087291634c3a9752c43aec2",
+      "bytes": 21381
+    },
+    "logs/latent-rep0-on.log": {
+      "sha256": "8c2228235e6b7305f900aa254d4516c8fca90ed356f323cb492f699714217e17",
+      "bytes": 21378
+    },
+    "logs/latent-rep1-off.log": {
+      "sha256": "e3d78afb520c7e254c51bdfe0237b57b3db97dc06ab825da090a20d72f316d9e",
+      "bytes": 21381
+    },
+    "logs/latent-rep1-on.log": {
+      "sha256": "3b9f6bcff85df5d58ddc9c2c849a0798b81929d38d6ea88794074be6f012a35f",
+      "bytes": 21378
+    },
+    "logs/latent-rep2-off.log": {
+      "sha256": "48f7fbafab715f329af7f03890d71771dceb778aa548f1d9712991e4be896fbb",
+      "bytes": 21381
+    },
+    "logs/latent-rep2-on.log": {
+      "sha256": "399799d63728dd0278cbe9752256f3cadc8a6975dd122b2502ccd8ca3438a958",
+      "bytes": 21378
+    },
+    "logs/moe-rep0-off.log": {
+      "sha256": "9dff363de59882c6b75564f9a42a3b43b45453229e75a5bd6fcb8d1f2ed22970",
+      "bytes": 20896
+    },
+    "logs/moe-rep0-on.log": {
+      "sha256": "61bcf15f134b60d829c36d41d72acb04c1d881fd3fb28a805a733fbfa3e5fd99",
+      "bytes": 20893
+    },
+    "logs/moe-rep1-off.log": {
+      "sha256": "3c4a73b60e71b89042d36046775dbc9e27654fba2c6fe60b133c7a385d565afb",
+      "bytes": 20897
+    },
+    "logs/moe-rep1-on.log": {
+      "sha256": "c2192e0f37695e8708ea93c4d2bb47be7f286ca278e097e2f064b36764b0ffc5",
+      "bytes": 20894
+    },
+    "logs/moe-rep2-off.log": {
+      "sha256": "c0f3e212c549fc193684b7974af17b6b5eb19c19eef32c4ef3ee1331573bc294",
+      "bytes": 20897
+    },
+    "logs/moe-rep2-on.log": {
+      "sha256": "84ff404c6ce762d0dee300a819a714eab08b540c4da93b8751c32981f062c8e6",
+      "bytes": 20894
+    },
+    "logs/mot-rep0-off.log": {
+      "sha256": "1845d53cc62c245e0edd23149315a39f6b2201569a558392b4f328e04b636288",
+      "bytes": 21593
+    },
+    "logs/mot-rep0-on.log": {
+      "sha256": "366fb555526ae479b8150c757858dd8b23639a11d51322b74d6a48e67d696b47",
+      "bytes": 21590
+    },
+    "logs/mot-rep1-off.log": {
+      "sha256": "a5d28437336134f55b7cf04034c8be844521184c695c8d2a29f28ec7ef2cf92e",
+      "bytes": 21593
+    },
+    "logs/mot-rep1-on.log": {
+      "sha256": "cff1e1199a240f2f8de491b3e39e85a6989b8ab5a3d2e0b81edbcdfa23081a36",
+      "bytes": 21590
+    },
+    "logs/mot-rep2-off.log": {
+      "sha256": "e57c555f53107aee4d4a05626635709d37d10c62eb4803cfa9a9470d7b9599c6",
+      "bytes": 21593
+    },
+    "logs/mot-rep2-on.log": {
+      "sha256": "94d62ee04e987ff1b4131a9484fc7123e0682ed788ff196508960705aa527b4b",
+      "bytes": 21590
+    },
+    "mot-off-off-repeatability.json": {
+      "sha256": "08b0bca159bdbabbebbd008e8595511dfdc775c371095b2121d2edf70a734cde",
+      "bytes": 679
+    },
+    "raw_runs.json": {
+      "sha256": "ebf7b3230e280848b6864a597891c93515f909fc4b570d8f35bba7162c8aa034",
+      "bytes": 122170
+    },
+    "summary.json": {
+      "sha256": "c57432ae7167ad9b05fa3dce0695ff96be93727aca14d2769f652d6167089a1c",
+      "bytes": 3874
+    },
+    "training_overhead.png": {
+      "sha256": "feac6f0f802558650a6cc46d2f6bdfd9c2113a1d98ffdeb5237ca842bfde9b96",
+      "bytes": 43765
+    },
+    "worker-results/latent-rep0-off.json": {
+      "sha256": "79aa839fdac0560132a60ebe6cad5eae654b96ed23f54dc13b9f2bdb77d6714b",
+      "bytes": 5418
+    },
+    "worker-results/latent-rep0-on.json": {
+      "sha256": "b900bd88f8984387fb962aa4f4e9dd433ded070ce6bf489c465e3f1f88616102",
+      "bytes": 5417
+    },
+    "worker-results/latent-rep1-off.json": {
+      "sha256": "8eb102d1926f9d30f31a14a20ef041c91fbf59bbec3d606d9b63573219fe3069",
+      "bytes": 5427
+    },
+    "worker-results/latent-rep1-on.json": {
+      "sha256": "d0d8656123d8497da566abd8f41a168aa5ed4236049e88da9fc9fc979f1bf4d8",
+      "bytes": 5420
+    },
+    "worker-results/latent-rep2-off.json": {
+      "sha256": "f7331b9fc86509521096ace5007e7f1bbc12500ae089c4417c6e87271407d0db",
+      "bytes": 5429
+    },
+    "worker-results/latent-rep2-on.json": {
+      "sha256": "ea636a913483563dff122c68cf6b1a3cbda9a6f86220e410b17823dac48837d0",
+      "bytes": 5419
+    },
+    "worker-results/moe-rep0-off.json": {
+      "sha256": "76548d9cc8318dcbb5a2cfab539c88fe5bb5f27926ee42e5411521ef87a2a0a6",
+      "bytes": 5430
+    },
+    "worker-results/moe-rep0-on.json": {
+      "sha256": "1278a608f65f60f949d960d3274639a337f183367bf326427219dba8b4ecc639",
+      "bytes": 5437
+    },
+    "worker-results/moe-rep1-off.json": {
+      "sha256": "4d005a72002b96b6c9a2c10118fbd55b13dc3bfaf13f462bb708bac87c1227fa",
+      "bytes": 5429
+    },
+    "worker-results/moe-rep1-on.json": {
+      "sha256": "4151a5eaa48bbbd1fbf42c3ddd4fb8b88c05b9242db780b1bcbebc425a0a1966",
+      "bytes": 5424
+    },
+    "worker-results/moe-rep2-off.json": {
+      "sha256": "722f9fc45ab1a4c6f14577e36ccdf1a67bf012bd7322b2dda69927900381412b",
+      "bytes": 5422
+    },
+    "worker-results/moe-rep2-on.json": {
+      "sha256": "5fa0a42a083cfd77d7cd2af5e82584466757435d8ba7752fcc4ee19c7462379a",
+      "bytes": 5422
+    },
+    "worker-results/mot-rep0-off.json": {
+      "sha256": "ce2d77e45a8131333e8fe9010437a64345f2281722229c5ef64b14f77051855b",
+      "bytes": 5400
+    },
+    "worker-results/mot-rep0-on.json": {
+      "sha256": "1474acd9065a22f00d167b49f98f22fd4ca64f4ec338f18e0bebdacb089d085a",
+      "bytes": 5403
+    },
+    "worker-results/mot-rep1-off.json": {
+      "sha256": "10e4f28c8ecc043e927e7f9af884c684a1b2b585a477ee7672cc57150a8d53fa",
+      "bytes": 5406
+    },
+    "worker-results/mot-rep1-on.json": {
+      "sha256": "c4c4056ddbbcb61886785ee73afa4b52d6b49fd4b332a6abc6feeedda82b239d",
+      "bytes": 5411
+    },
+    "worker-results/mot-rep2-off.json": {
+      "sha256": "51513e1bbaeb7f13cd9fadc2bf718d4401aef3527bb3b43d16949d856c9f7136",
+      "bytes": 5415
+    },
+    "worker-results/mot-rep2-on.json": {
+      "sha256": "10cdc5f8b6a34f77f555e5ef3c000ec0dbdea06aa11bd3f8d64696e635f7dd6d",
+      "bytes": 5411
+    }
+  }
+}

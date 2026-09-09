@@ -1,0 +1,18 @@
+{
+  "family": "MOT",
+  "condition": "off/off",
+  "seed": 0,
+  "epochs": 10,
+  "imgsz": 640,
+  "batch": 1,
+  "device": "0",
+  "amp": false,
+  "initial_model_sha256_equal": true,
+  "batch_fingerprints_equal": true,
+  "batch_count": 40,
+  "mean_relative_loss_drift": 0.023302273625217286,
+  "max_relative_loss_drift": 0.1222801230917333,
+  "run_a_sha256": "55fce0512fed9e58398a3f3885fc2b9c3dc93b70bcab2acae41659a206088c57",
+  "run_b_sha256": "eab64479b6853960a4a06e955820d3599dbd428afedd48a57bde93ea154b1eec",
+  "interpretation": "Current CUDA MoT training is not bitwise reproducible across isolated processes; on/off drift must be read against this baseline."
+}

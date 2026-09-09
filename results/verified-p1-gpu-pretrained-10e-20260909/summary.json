@@ -1,0 +1,138 @@
+{
+  "status": "passed",
+  "scope": "paired real COCO8 training batch time including routing collection and live dashboard writes",
+  "families": {
+    "moe": {
+      "paired_mean_ratios": [
+        1.0330779642804866,
+        0.9815665331285742,
+        0.9904514682193669
+      ],
+      "median_ratio": 0.9904514682193669,
+      "median_slowdown_pct": -0.9548531780633085,
+      "bootstrap_95_ci_ratio": [
+        0.9815665331285742,
+        1.0330779642804866
+      ],
+      "records_written": 90,
+      "passed_median_under_10_percent": true
+    },
+    "mot": {
+      "paired_mean_ratios": [
+        1.0962257886374078,
+        1.0214710862530731,
+        0.9993601919011902
+      ],
+      "median_ratio": 1.0214710862530731,
+      "median_slowdown_pct": 2.1471086253073146,
+      "bootstrap_95_ci_ratio": [
+        0.9993601919011902,
+        1.0962257886374078
+      ],
+      "records_written": 60,
+      "passed_median_under_10_percent": true
+    },
+    "latent": {
+      "paired_mean_ratios": [
+        1.0301754520582043,
+        1.0166100804156935,
+        0.9846774741549305
+      ],
+      "median_ratio": 1.0166100804156935,
+      "median_slowdown_pct": 1.6610080415693451,
+      "bootstrap_95_ci_ratio": [
+        0.9846774741549305,
+        1.0301754520582043
+      ],
+      "records_written": 45,
+      "passed_median_under_10_percent": true
+    }
+  },
+  "loss_trajectory_drift": [
+    {
+      "family": "moe",
+      "repetition": 0,
+      "mean_relative": 0.0,
+      "max_relative": 0.0,
+      "exact_within_cpu_tolerance": true
+    },
+    {
+      "family": "moe",
+      "repetition": 1,
+      "mean_relative": 0.0,
+      "max_relative": 0.0,
+      "exact_within_cpu_tolerance": true
+    },
+    {
+      "family": "moe",
+      "repetition": 2,
+      "mean_relative": 0.0,
+      "max_relative": 0.0,
+      "exact_within_cpu_tolerance": true
+    },
+    {
+      "family": "mot",
+      "repetition": 0,
+      "mean_relative": 0.017996631846728374,
+      "max_relative": 0.1416540117430636,
+      "exact_within_cpu_tolerance": false
+    },
+    {
+      "family": "mot",
+      "repetition": 1,
+      "mean_relative": 0.038515862817145294,
+      "max_relative": 0.2980925088044931,
+      "exact_within_cpu_tolerance": false
+    },
+    {
+      "family": "mot",
+      "repetition": 2,
+      "mean_relative": 0.04605065923122009,
+      "max_relative": 0.25177838097920796,
+      "exact_within_cpu_tolerance": false
+    },
+    {
+      "family": "latent",
+      "repetition": 0,
+      "mean_relative": 0.0,
+      "max_relative": 0.0,
+      "exact_within_cpu_tolerance": true
+    },
+    {
+      "family": "latent",
+      "repetition": 1,
+      "mean_relative": 0.0,
+      "max_relative": 0.0,
+      "exact_within_cpu_tolerance": true
+    },
+    {
+      "family": "latent",
+      "repetition": 2,
+      "mean_relative": 0.0,
+      "max_relative": 0.0,
+      "exact_within_cpu_tolerance": true
+    }
+  ],
+  "config": {
+    "yolo_root": "D:\\AI\\YOLO-Master",
+    "p0_root": "D:\\AI\\E3-Routing-P0",
+    "output": "D:\\AI\\E3-Routing-P1\\results\\verified-p1-gpu-pretrained-10e-20260909",
+    "data": "D:\\AI\\E3-Routing-P2\\configs\\coco8-local.yaml",
+    "epochs": 10,
+    "repetitions": 3,
+    "imgsz": 640,
+    "batch": 1,
+    "device": "0",
+    "pretrained_weights": "D:\\AI\\YOLO-Master\\yolo26n.pt",
+    "amp": false,
+    "allow_loss_drift": true,
+    "warmup_batches": 4,
+    "sample_every": 8,
+    "seed": 0,
+    "keep_train_artifacts": false
+  },
+  "limitations": [
+    "COCO8 contains only four training images; timing and telemetry are infrastructure evidence, not a general detection benchmark.",
+    "Three paired seeds satisfy the minimum reporting rule but produce a wide bootstrap interval; retain every raw batch."
+  ]
+}

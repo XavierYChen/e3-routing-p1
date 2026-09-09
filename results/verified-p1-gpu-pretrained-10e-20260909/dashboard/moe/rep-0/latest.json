@@ -1,0 +1,428 @@
+{
+  "schema_version": "e3.routing_record.v1",
+  "run_id": "moe-rep0-on",
+  "step": 32,
+  "updated_utc": "2026-09-09T09:12:15.682925+00:00",
+  "records": [
+    {
+      "schema_version": "e3.routing_record.v1",
+      "run_id": "moe-rep0-on",
+      "timestamp_utc": "2026-09-09T09:12:15.222196+00:00",
+      "step": 32,
+      "mode": "train",
+      "family": "moe",
+      "layer_name": "model.4.m.0.0.mlp",
+      "module_type": "OptimizedMOEImproved",
+      "num_experts": 4,
+      "top_k": 3,
+      "expert_usage": [
+        0.3333333333333333,
+        0.3333333333333333,
+        0.3333333333333333,
+        0.0
+      ],
+      "usage_semantics": "topk_selection_share",
+      "mean_router_probs": [
+        0.46759994231462304,
+        0.2613059360178094,
+        0.2710941216675675,
+        0.0
+      ],
+      "mean_topk_weight": [
+        0.46759994231462304,
+        0.2710941216675675,
+        0.2613059360178094
+      ],
+      "normalized_entropy": 0.792481250360578,
+      "normalized_gini": 0.3333333333333333,
+      "dominant_share": 0.3333333333333333,
+      "dead_experts": [
+        3
+      ],
+      "aux_loss": {
+        "status": "not_published_eval",
+        "observed": null,
+        "balance_loss_coeff": 1.0,
+        "router_z_loss_coeff": 0.1
+      },
+      "source": "router_topk_output",
+      "tensor_shape": [
+        1,
+        64,
+        80,
+        80
+      ],
+      "metadata": {
+        "usage_scope": "rank_local",
+        "global_usage_available": false,
+        "dispatch_policy": null
+      }
+    },
+    {
+      "schema_version": "e3.routing_record.v1",
+      "run_id": "moe-rep0-on",
+      "timestamp_utc": "2026-09-09T09:12:15.250202+00:00",
+      "step": 32,
+      "mode": "train",
+      "family": "moe",
+      "layer_name": "model.4.m.0.1.mlp",
+      "module_type": "OptimizedMOEImproved",
+      "num_experts": 4,
+      "top_k": 3,
+      "expert_usage": [
+        0.3333333333333333,
+        0.3333333333333333,
+        0.0,
+        0.3333333333333333
+      ],
+      "usage_semantics": "topk_selection_share",
+      "mean_router_probs": [
+        0.3029252886772156,
+        0.2484123408794403,
+        0.0,
+        0.4486623704433441
+      ],
+      "mean_topk_weight": [
+        0.4486623704433441,
+        0.3029252886772156,
+        0.2484123408794403
+      ],
+      "normalized_entropy": 0.792481250360578,
+      "normalized_gini": 0.3333333333333333,
+      "dominant_share": 0.3333333333333333,
+      "dead_experts": [
+        2
+      ],
+      "aux_loss": {
+        "status": "not_published_eval",
+        "observed": null,
+        "balance_loss_coeff": 1.0,
+        "router_z_loss_coeff": 0.1
+      },
+      "source": "router_topk_output",
+      "tensor_shape": [
+        1,
+        64,
+        80,
+        80
+      ],
+      "metadata": {
+        "usage_scope": "rank_local",
+        "global_usage_available": false,
+        "dispatch_policy": null
+      }
+    },
+    {
+      "schema_version": "e3.routing_record.v1",
+      "run_id": "moe-rep0-on",
+      "timestamp_utc": "2026-09-09T09:12:15.279167+00:00",
+      "step": 32,
+      "mode": "train",
+      "family": "moe",
+      "layer_name": "model.6.m.0.0.mlp",
+      "module_type": "OptimizedMOEImproved",
+      "num_experts": 8,
+      "top_k": 7,
+      "expert_usage": [
+        0.14285714285714285,
+        0.14285714285714285,
+        0.14285714285714285,
+        0.14285714285714285,
+        0.14285714285714285,
+        0.0,
+        0.14285714285714285,
+        0.14285714285714285
+      ],
+      "usage_semantics": "topk_selection_share",
+      "mean_router_probs": [
+        0.2154542006010205,
+        0.13094513703637436,
+        0.24762230728368345,
+        0.07362050892206322,
+        0.14145494139738118,
+        0.0,
+        0.06832935221475447,
+        0.12257355254472282
+      ],
+      "mean_topk_weight": [
+        0.24762230728368345,
+        0.2154542006010205,
+        0.14145494139738118,
+        0.13094513703637436,
+        0.12257355254472282,
+        0.07362050892206322,
+        0.06832935221475447
+      ],
+      "normalized_entropy": 0.9357849740192014,
+      "normalized_gini": 0.14285714285714285,
+      "dominant_share": 0.14285714285714285,
+      "dead_experts": [
+        5
+      ],
+      "aux_loss": {
+        "status": "not_published_eval",
+        "observed": null,
+        "balance_loss_coeff": 1.0,
+        "router_z_loss_coeff": 0.1
+      },
+      "source": "router_topk_output",
+      "tensor_shape": [
+        1,
+        64,
+        40,
+        40
+      ],
+      "metadata": {
+        "usage_scope": "rank_local",
+        "global_usage_available": false,
+        "dispatch_policy": null
+      }
+    },
+    {
+      "schema_version": "e3.routing_record.v1",
+      "run_id": "moe-rep0-on",
+      "timestamp_utc": "2026-09-09T09:12:15.307640+00:00",
+      "step": 32,
+      "mode": "train",
+      "family": "moe",
+      "layer_name": "model.6.m.0.1.mlp",
+      "module_type": "OptimizedMOEImproved",
+      "num_experts": 8,
+      "top_k": 7,
+      "expert_usage": [
+        0.14285714285714285,
+        0.0,
+        0.14285714285714285,
+        0.14285714285714285,
+        0.14285714285714285,
+        0.14285714285714285,
+        0.14285714285714285,
+        0.14285714285714285
+      ],
+      "usage_semantics": "topk_selection_share",
+      "mean_router_probs": [
+        0.12176770516191596,
+        0.0,
+        0.09621275646445557,
+        0.10189002462729922,
+        0.19828514151059723,
+        0.1413707051293867,
+        0.15097806532582933,
+        0.189495601780516
+      ],
+      "mean_topk_weight": [
+        0.19828514151059723,
+        0.189495601780516,
+        0.15097806532582933,
+        0.1413707051293867,
+        0.12176770516191596,
+        0.10189002462729922,
+        0.09621275646445557
+      ],
+      "normalized_entropy": 0.9357849740192014,
+      "normalized_gini": 0.14285714285714285,
+      "dominant_share": 0.14285714285714285,
+      "dead_experts": [
+        1
+      ],
+      "aux_loss": {
+        "status": "not_published_eval",
+        "observed": null,
+        "balance_loss_coeff": 1.0,
+        "router_z_loss_coeff": 0.1
+      },
+      "source": "router_topk_output",
+      "tensor_shape": [
+        1,
+        64,
+        40,
+        40
+      ],
+      "metadata": {
+        "usage_scope": "rank_local",
+        "global_usage_available": false,
+        "dispatch_policy": null
+      }
+    },
+    {
+      "schema_version": "e3.routing_record.v1",
+      "run_id": "moe-rep0-on",
+      "timestamp_utc": "2026-09-09T09:12:15.352111+00:00",
+      "step": 32,
+      "mode": "train",
+      "family": "moe",
+      "layer_name": "model.8.m.0.0.mlp",
+      "module_type": "OptimizedMOEImproved",
+      "num_experts": 16,
+      "top_k": 15,
+      "expert_usage": [
+        0.06666666666666667,
+        0.0,
+        0.06666666666666667,
+        0.06666666666666667,
+        0.06666666666666667,
+        0.06666666666666667,
+        0.06666666666666667,
+        0.06666666666666667,
+        0.06666666666666667,
+        0.06666666666666667,
+        0.06666666666666667,
+        0.06666666666666667,
+        0.06666666666666667,
+        0.06666666666666667,
+        0.06666666666666667,
+        0.06666666666666667
+      ],
+      "usage_semantics": "topk_selection_share",
+      "mean_router_probs": [
+        0.04144139477798235,
+        0.0,
+        0.03126225818491872,
+        0.05767468728300066,
+        0.03483429771729954,
+        0.08465689956831668,
+        0.09921219828206067,
+        0.03534609303207539,
+        0.04216308413733702,
+        0.07463675464997005,
+        0.06409608233583496,
+        0.07952955868841148,
+        0.10306142923252395,
+        0.07924317325329015,
+        0.0993921372654525,
+        0.07344995159152588
+      ],
+      "mean_topk_weight": [
+        0.10306142923252395,
+        0.0993921372654525,
+        0.09921219828206067,
+        0.08465689956831668,
+        0.07952955868841148,
+        0.07924317325329015,
+        0.07463675464997005,
+        0.07344995159152588,
+        0.06409608233583496,
+        0.05767468728300066,
+        0.04216308413733702,
+        0.04144139477798235,
+        0.03534609303207539,
+        0.03483429771729954,
+        0.03126225818491872
+      ],
+      "normalized_entropy": 0.9767226489021297,
+      "normalized_gini": 0.06666666666666667,
+      "dominant_share": 0.06666666666666667,
+      "dead_experts": [
+        1
+      ],
+      "aux_loss": {
+        "status": "not_published_eval",
+        "observed": null,
+        "balance_loss_coeff": 1.0,
+        "router_z_loss_coeff": 0.1
+      },
+      "source": "router_topk_output",
+      "tensor_shape": [
+        1,
+        128,
+        20,
+        20
+      ],
+      "metadata": {
+        "usage_scope": "rank_local",
+        "global_usage_available": false,
+        "dispatch_policy": null
+      }
+    },
+    {
+      "schema_version": "e3.routing_record.v1",
+      "run_id": "moe-rep0-on",
+      "timestamp_utc": "2026-09-09T09:12:15.395651+00:00",
+      "step": 32,
+      "mode": "train",
+      "family": "moe",
+      "layer_name": "model.8.m.0.1.mlp",
+      "module_type": "OptimizedMOEImproved",
+      "num_experts": 16,
+      "top_k": 15,
+      "expert_usage": [
+        0.06666666666666667,
+        0.06666666666666667,
+        0.06666666666666667,
+        0.06666666666666667,
+        0.06666666666666667,
+        0.06666666666666667,
+        0.0,
+        0.06666666666666667,
+        0.06666666666666667,
+        0.06666666666666667,
+        0.06666666666666667,
+        0.06666666666666667,
+        0.06666666666666667,
+        0.06666666666666667,
+        0.06666666666666667,
+        0.06666666666666667
+      ],
+      "usage_semantics": "topk_selection_share",
+      "mean_router_probs": [
+        0.06770642594596647,
+        0.03729016939959789,
+        0.056084146496499086,
+        0.042553769701951384,
+        0.09612451135648373,
+        0.061900259483595954,
+        0.0,
+        0.06781836346468466,
+        0.0742558660262873,
+        0.06828774257422453,
+        0.05348767885984187,
+        0.11340860599992401,
+        0.06645079454590401,
+        0.059667536628710605,
+        0.0806419595836863,
+        0.05432216993264221
+      ],
+      "mean_topk_weight": [
+        0.11340860599992401,
+        0.09612451135648373,
+        0.0806419595836863,
+        0.0742558660262873,
+        0.06828774257422453,
+        0.06781836346468466,
+        0.06770642594596647,
+        0.06645079454590401,
+        0.061900259483595954,
+        0.059667536628710605,
+        0.056084146496499086,
+        0.05432216993264221,
+        0.05348767885984187,
+        0.042553769701951384,
+        0.03729016939959789
+      ],
+      "normalized_entropy": 0.9767226489021297,
+      "normalized_gini": 0.06666666666666667,
+      "dominant_share": 0.06666666666666667,
+      "dead_experts": [
+        6
+      ],
+      "aux_loss": {
+        "status": "not_published_eval",
+        "observed": null,
+        "balance_loss_coeff": 1.0,
+        "router_z_loss_coeff": 0.1
+      },
+      "source": "router_topk_output",
+      "tensor_shape": [
+        1,
+        128,
+        20,
+        20
+      ],
+      "metadata": {
+        "usage_scope": "rank_local",
+        "global_usage_available": false,
+        "dispatch_policy": null
+      }
+    }
+  ]
+}

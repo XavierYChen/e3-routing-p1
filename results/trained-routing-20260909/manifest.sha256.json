@@ -1,0 +1,37 @@
+{
+  "algorithm": "sha256",
+  "files": {
+    "moa-confusion_matrix_normalized.png": {
+      "sha256": "2cc5739e73eb2013f8253d7dfa550c36d44d5771ce1759c6807406442c69aafb",
+      "bytes": 315735
+    },
+    "moa-results.png": {
+      "sha256": "693857a6df5e7353dc53600a15c2b0e3b4e9ff1f78ccd6adc4fe8f9d59547a63",
+      "bytes": 334648
+    },
+    "moa-summary.json": {
+      "sha256": "1e2ef3ca3e4683717e5a19d46b29eddb127f10322bca8afe6e97daf9e10d3c6a",
+      "bytes": 1565
+    },
+    "moa-val_batch0_pred.jpg": {
+      "sha256": "61f72c1bd3fe2cf2ee51482fdecaf0e544a6c0c3e9ec69453d41b4d1a64a7b4d",
+      "bytes": 229200
+    },
+    "mot-confusion_matrix_normalized.png": {
+      "sha256": "2cc5739e73eb2013f8253d7dfa550c36d44d5771ce1759c6807406442c69aafb",
+      "bytes": 315735
+    },
+    "mot-results.png": {
+      "sha256": "b7d3ddaf9257dbb1cda3f6aa5bfe7f6589d3983ac8aef3a88315709bd503a13a",
+      "bytes": 339702
+    },
+    "mot-summary.json": {
+      "sha256": "439e8e110414bc455cbcd8cdf9ef96f81dd850005fd28da9d0838c5a7041c57f",
+      "bytes": 1566
+    },
+    "mot-val_batch0_pred.jpg": {
+      "sha256": "61f72c1bd3fe2cf2ee51482fdecaf0e544a6c0c3e9ec69453d41b4d1a64a7b4d",
+      "bytes": 229200
+    }
+  }
+}

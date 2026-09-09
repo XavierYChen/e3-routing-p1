@@ -92,6 +92,13 @@ def parser() -> argparse.ArgumentParser:
     result.add_argument("--imgsz", type=int, default=64)
     result.add_argument("--batch", type=int, default=2)
     result.add_argument("--device", default="cpu")
+    result.add_argument("--pretrained-weights", type=Path)
+    result.add_argument("--amp", action="store_true")
+    result.add_argument(
+        "--allow-loss-drift",
+        action="store_true",
+        help="Record rather than reject cross-process loss drift (needed for audited nondeterministic CUDA routing).",
+    )
     result.add_argument("--warmup-batches", type=int, default=1)
     result.add_argument("--sample-every", type=int, default=2)
     result.add_argument("--seed", type=int, default=0)
@@ -116,6 +123,7 @@ def main(argv: list[str] | None = None) -> int:
         "latent": "yolo26-master-latent-n.yaml",
     }
     raw_runs = []
+    loss_drift = []
     ratios: dict[str, list[float]] = {family: [] for family in profiles}
     for family in profiles:
         for repetition in range(args.repetitions):
@@ -160,6 +168,10 @@ def main(argv: list[str] | None = None) -> int:
                     "--seed",
                     str(run_seed),
                 ]
+                if args.pretrained_weights:
+                    command.extend(["--pretrained-weights", str(args.pretrained_weights.resolve())])
+                if args.amp:
+                    command.append("--amp")
                 completed = subprocess.run(
                     command,
                     cwd=ROOT,
@@ -199,9 +211,24 @@ def main(argv: list[str] | None = None) -> int:
                 raise RuntimeError(f"{family} repetition {repetition}: initial model fingerprints differ")
             if pair_runs["off"]["batch_fingerprints"] != pair_runs["on"]["batch_fingerprints"]:
                 raise RuntimeError(f"{family} repetition {repetition}: training batch fingerprints differ")
-            if len(off_losses) != len(on_losses) or any(
-                not math.isclose(off, on, rel_tol=1e-5, abs_tol=1e-6) for off, on in zip(off_losses, on_losses)
-            ):
+            if len(off_losses) != len(on_losses):
+                raise RuntimeError(f"{family} repetition {repetition}: telemetry changed the training loss")
+            relative_loss_drift = [
+                abs(off - on) / max(abs(off), 1e-12) for off, on in zip(off_losses, on_losses)
+            ]
+            loss_drift.append(
+                {
+                    "family": family,
+                    "repetition": repetition,
+                    "mean_relative": statistics.mean(relative_loss_drift),
+                    "max_relative": max(relative_loss_drift),
+                    "exact_within_cpu_tolerance": all(
+                        math.isclose(off, on, rel_tol=1e-5, abs_tol=1e-6)
+                        for off, on in zip(off_losses, on_losses)
+                    ),
+                }
+            )
+            if not args.allow_loss_drift and not loss_drift[-1]["exact_within_cpu_tolerance"]:
                 raise RuntimeError(f"{family} repetition {repetition}: telemetry changed the training loss")
 
     families = {}
@@ -223,10 +250,11 @@ def main(argv: list[str] | None = None) -> int:
         "status": "passed" if passed else "failed",
         "scope": "paired real COCO8 training batch time including routing collection and live dashboard writes",
         "families": families,
+        "loss_trajectory_drift": loss_drift,
         "config": {key: str(value) if isinstance(value, Path) else value for key, value in vars(args).items()},
         "limitations": [
-            "CPU laptop microbenchmark; report confidence interval and raw batches.",
-            "Randomly initialized models test infrastructure overhead, not detection quality.",
+            "COCO8 contains only four training images; timing and telemetry are infrastructure evidence, not a general detection benchmark.",
+            "Three paired seeds satisfy the minimum reporting rule but produce a wide bootstrap interval; retain every raw batch.",
         ],
     }
     (args.output / "raw_runs.json").write_text(json.dumps(raw_runs, indent=2, allow_nan=False) + "\n", encoding="utf-8")

@@ -29,6 +29,8 @@ def parser() -> argparse.ArgumentParser:
     result.add_argument("--imgsz", type=int, required=True)
     result.add_argument("--batch", type=int, required=True)
     result.add_argument("--device", required=True)
+    result.add_argument("--pretrained-weights", type=Path)
+    result.add_argument("--amp", action="store_true")
     result.add_argument("--sample-every", type=int, default=1)
     result.add_argument("--seed", type=int, required=True)
     return result
@@ -107,6 +109,13 @@ def main() -> int:
         "latent": "yolo26-master-latent-n.yaml",
     }
     model = YOLO(str(args.yolo_root / "ultralytics/cfg/models/26" / profiles[args.family]))
+    pretrained_sha256 = None
+    if args.pretrained_weights:
+        weights = args.pretrained_weights.resolve()
+        if not weights.is_file():
+            raise FileNotFoundError(f"pretrained weights not found: {weights}")
+        pretrained_sha256 = hashlib.sha256(weights.read_bytes()).hexdigest()
+        model.load(weights)
     snapshots_cleared = clear_runtime_snapshots(model)
     initial_model_sha256 = model_fingerprint(model)
     telemetry = TrainingTelemetry(
@@ -135,7 +144,7 @@ def main() -> int:
         batch=args.batch,
         device=args.device,
         workers=0,
-        amp=False,
+        amp=args.amp,
         val=False,
         save=False,
         plots=False,
@@ -174,6 +183,9 @@ def main() -> int:
         "losses": telemetry.losses,
         "batch_fingerprints": telemetry.batch_fingerprints,
         "initial_model_sha256": initial_model_sha256,
+        "pretrained_weights": str(args.pretrained_weights.resolve()) if args.pretrained_weights else None,
+        "pretrained_sha256": pretrained_sha256,
+        "amp": args.amp,
         "initial_snapshots_cleared": snapshots_cleared,
         "hooks_removed": telemetry.collector is None,
     }
